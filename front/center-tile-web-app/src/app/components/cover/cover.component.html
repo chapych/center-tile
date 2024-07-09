@@ -1,0 +1,9 @@
+<div class="container">
+  <ya-map [center]="[55.72, 37.44]" (ready)="onMapReady($event)">
+    <ya-geoobject
+      [feature]="polygon.feature"
+      [options]="polygon.options"
+      (ready)="onPolygonReady($event)"
+    ></ya-geoobject>
+  </ya-map>
+</div>
