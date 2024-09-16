@@ -25,7 +25,7 @@ Currently, only a condition based on pavement material is supported.
 - Docker support
 
 # Future plans
-- Admin cabinet
+- Admin site
 - Attaching media
 - The result heat map when data is enough
 
