@@ -1,0 +1,14 @@
+﻿services:
+  suggestionsdb:
+    image: postgres
+  datasuggesting.api:
+    build:
+      context: .
+      dockerfile: Services/DataSuggesting/DataSuggesting.API/Dockerfile
+  front:
+    build: 
+      context: .
+      dockerfile: front/center-tile-web-app/Dockerfile
+    
+volumes:
+  postgres_suggestions:

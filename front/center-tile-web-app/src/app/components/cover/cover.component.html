@@ -1,9 +1,15 @@
 <div class="container">
-  <ya-map [center]="[55.72, 37.44]" (ready)="onMapReady($event)">
+  <ya-map [center]="[55.72, 37.44]"
+          [state]="{ controls: [] }"
+          (ready)="onMapReady($event)"
+  >
     <ya-geoobject
       [feature]="polygon.feature"
       [options]="polygon.options"
       (ready)="onPolygonReady($event)"
     ></ya-geoobject>
   </ya-map>
+</div>
+<div><p>💡  <i>Нажмите на карту для создания линии. Точки можно перетаскивать. </i></p>
+<p><i>Нажмите на последнюю вершину и выберите "Завершить", если рисовать больше не надо! </i></p>
 </div>

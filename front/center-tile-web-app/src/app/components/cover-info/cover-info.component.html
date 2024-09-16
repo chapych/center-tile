@@ -1,0 +1,37 @@
+<div style="background:#E7F2D5; padding:50px">
+  <form [formGroup]="info" novalidate (ngSubmit)="submit()" class='parent grid-parent'>
+    <div>
+      <app-cover #coverComponent></app-cover>
+    </div>
+
+<div>
+  <div class='example-tel-input-element' align="center">
+<mat-form-field>
+  <mat-label style="color: black">Введите почту</mat-label>
+  <input type="email" formControlName="email" matInput [errorStateMatcher]="matcher"
+         placeholder="Ex. pat@example.com">
+  <mat-hint>Для обратной связи</mat-hint>
+</mat-form-field>
+</div>
+    <div align="center">
+<mat-form-field>
+  <mat-label>Материал</mat-label>
+  <mat-select formControlName="material-type" required>
+    <mat-option value="Tile">Плитка</mat-option>
+    <mat-option value="Asphalt">Асфальт</mat-option>
+    <mat-option value="Paving">Брусчатка</mat-option>
+  </mat-select>
+</mat-form-field>
+  </div>
+  <div align="center">
+<mat-form-field>
+  <mat-label>Комментарий</mat-label>
+  <textarea rows="10" formControlName="comment" matInput></textarea>
+</mat-form-field>
+  </div >
+  <div align="center">
+  <button mat-button align="center">Отправить</button>
+  </div>
+  </div>
+  </form>
+</div>

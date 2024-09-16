@@ -1,0 +1,28 @@
+﻿services:
+  suggestionsdb:
+    container_name: suggestionsdb
+    environment:
+      - DataSuggesting.env
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=SuggestionsDb
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_suggestions:/var/lib/postgresql/data/ 
+
+  datasuggesting.api:
+    container_name: datasuggesting
+    environment:
+      - ConnectionStrings__Database=Server=suggestionsdb;Port=5432;Database=SuggestionsDb;User Id=postgres;Password=postgres;Include Error Detail=true
+    depends_on:
+      - suggestionsdb
+    ports:
+      - "8080:8080"
+    volumes:
+      - postgres_suggestions:/data
+    
+  front:
+    container_name: front
+    ports:
+      - "4200:4200"
